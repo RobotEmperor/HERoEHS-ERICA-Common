@@ -1,0 +1,70 @@
+erica_robot:
+  # Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 125  
+  
+  # Position Controllers ---------------------------------------
+  # left arm ---------------------------------------
+  l_arm_shoulder_pitch_position:
+    type: effort_controllers/JointPositionController
+    joint: l_arm_shoulder_pitch
+    pid: {p: 7500.0, i: 0.1, d: 100.0}
+
+  l_arm_shoulder_roll_position:
+    type: effort_controllers/JointPositionController
+    joint: l_arm_shoulder_roll
+    pid: {p: 7500.0, i: 0.1, d: 100.0}
+
+  l_arm_shoulder_yaw_position:
+    type: effort_controllers/JointPositionController
+    joint: l_arm_shoulder_yaw
+    pid: {p: 7500.0, i: 0.1, d: 100.0}
+
+  l_arm_elbow_pitch_position:
+    type: effort_controllers/JointPositionController
+    joint: l_arm_elbow_pitch
+    pid: {p: 7500.0, i: 0.1, d: 100.0}
+
+  l_arm_wrist_pitch_position:
+    type: effort_controllers/JointPositionController
+    joint: l_arm_wrist_pitch
+    pid: {p: 7500.0, i: 0.1, d: 100.0}
+
+  l_arm_wrist_roll_position:
+    type: effort_controllers/JointPositionController
+    joint: l_arm_wrist_roll
+    pid: {p: 7500.0, i: 0.1, d: 100.0}
+
+  # right arm ---------------------------------------
+  r_arm_shoulder_pitch_position:
+    type: effort_controllers/JointPositionController
+    joint: r_arm_shoulder_pitch
+    pid: {p: 7500.0, i: 0.1, d: 100.0}
+
+  r_arm_shoulder_roll_position:
+    type: effort_controllers/JointPositionController
+    joint: r_arm_shoulder_roll
+    pid: {p: 7500.0, i: 0.1, d: 100.0}
+
+  r_arm_shoulder_yaw_position:
+    type: effort_controllers/JointPositionController
+    joint: r_arm_shoulder_yaw
+    pid: {p: 7500.0, i: 0.1, d: 100.0}
+
+  r_arm_elbow_pitch_position:
+    type: effort_controllers/JointPositionController
+    joint: r_arm_elbow_pitch
+    pid: {p: 7500.0, i: 0.1, d: 100.0}
+
+  r_arm_wrist_pitch_position:
+    type: effort_controllers/JointPositionController
+    joint: r_arm_wrist_pitch
+    pid: {p: 7500.0, i: 0.1, d: 100.0}
+
+  r_arm_wrist_roll_position:
+    type: effort_controllers/JointPositionController
+    joint: r_arm_wrist_roll
+    pid: {p: 7500.0, i: 0.1, d: 100.0}
+
+
