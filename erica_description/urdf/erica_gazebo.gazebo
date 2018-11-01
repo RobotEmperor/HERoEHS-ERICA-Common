@@ -14,6 +14,9 @@
   <gazebo reference="world">
   </gazebo>
 
+  <gazebo reference="base">
+  </gazebo>
+
    <!-- Base -->
   <gazebo reference="body_main">
     <mu1>0.2</mu1>

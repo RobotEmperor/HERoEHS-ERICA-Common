@@ -23,7 +23,7 @@
   </link>
 
   <joint name="base_fixed" type="fixed">
-    <origin xyz="0 0 0.9" rpy="0 0 0"/>
+    <origin xyz="0 0 1" rpy="0 0 0"/>
     <parent link="base"/>
     <child link="body_main"/>
   </joint>
@@ -48,7 +48,7 @@
 
     <inertial>
       <origin xyz="0 0 0" rpy="0 0 0"/>      
-      <mass value="1"/>
+      <mass value="100"/>
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />      
     </inertial>
   </link>
@@ -104,7 +104,7 @@
     <parent link="l_arm_shoulder_pitch_link"/>
     <child link="l_arm_shoulder_roll_link"/>
     <origin xyz="0 0.097 0" rpy="0 0 0"/>
-    <axis xyz="1 0 0"/>
+    <axis xyz="0 0 -1"/>
     <limit velocity="6.5" effort="1000" lower="${-pi/2}" upper="${pi}" />
     <dynamics damping = "0.7"/>
   </joint>
@@ -148,8 +148,8 @@
 <joint name="l_arm_sh_y" type="revolute">
     <parent link="l_arm_shoulder_roll_link"/>
     <child link="l_arm_shoulder_yaw_link"/>
-    <origin xyz="0 0 -0.047" rpy="0 0 0"/>
-    <axis xyz="0 0 1"/>
+    <origin xyz="0.047 0 0" rpy="0 0 0"/>
+    <axis xyz="-1 0 0"/>
     <limit velocity="6.5" effort="1000" lower="${-pi/2}" upper="${pi}" />
     <dynamics damping = "0.7"/>
   </joint>
@@ -192,8 +192,8 @@
 <joint name="l_arm_el_p" type="revolute">
     <parent link="l_arm_shoulder_yaw_link"/>
     <child link="l_arm_elbow_pitch_link"/>
-    <origin xyz="0 0 -0.153" rpy="0 0 0"/>
-    <axis xyz="0 1 0"/>
+    <origin xyz="0.153 0 0" rpy="0 0 0"/>
+    <axis xyz="0 -1 0"/>
     <limit velocity="6.5" effort="1000" lower="${-pi/2}" upper="${pi}" />
     <dynamics damping = "0.7"/>
   </joint>
@@ -237,8 +237,8 @@
 <joint name="l_arm_wr_p" type="revolute">
     <parent link="l_arm_elbow_pitch_link"/>
     <child link="l_arm_wrist_pitch_link"/>
-    <origin xyz="0 0 -0.2" rpy="0 0 0"/>
-    <axis xyz="0 1 0"/>
+    <origin xyz="0.2 0 0" rpy="0 0 0"/>
+    <axis xyz="0 -1 0"/>
     <limit velocity="6.5" effort="1000" lower="${-pi/2}" upper="${pi}" />
     <dynamics damping = "0.7"/>
   </joint>
@@ -283,7 +283,7 @@
     <parent link="l_arm_wrist_pitch_link"/>
     <child link="l_arm_wrist_roll_link"/>
     <origin xyz="0 0 0" rpy="0 0 0"/>
-    <axis xyz="1 0 0"/>
+    <axis xyz="0 0 -1"/>
     <limit velocity="6.5" effort="1000" lower="${-pi/2}" upper="${pi}" />
     <dynamics damping = "0.7"/>
   </joint>
@@ -330,7 +330,7 @@
     <parent link="body_main"/>
     <child link="r_arm_shoulder_pitch_link"/>
     <origin xyz="0 -0.113 0" rpy="0 0 0"/>
-    <axis xyz="0 1 0"/>
+    <axis xyz="0 -1 0"/>
     <limit velocity="6.5" effort="1000" lower="${-pi/2}" upper="${pi}" />
     <dynamics damping = "0.7"/>
   </joint>
@@ -375,7 +375,7 @@
     <parent link="r_arm_shoulder_pitch_link"/>
     <child link="r_arm_shoulder_roll_link"/>
     <origin xyz="0 -0.097 0" rpy="0 0 0"/>
-    <axis xyz="1 0 0"/>
+    <axis xyz="0 0 -1"/>
     <limit velocity="6.5" effort="1000" lower="${-pi/2}" upper="${pi}" />
     <dynamics damping = "0.7"/>
   </joint>
@@ -419,8 +419,8 @@
 <joint name="r_arm_sh_y" type="revolute">
     <parent link="r_arm_shoulder_roll_link"/>
     <child link="r_arm_shoulder_yaw_link"/>
-    <origin xyz="0 0 -0.047" rpy="0 0 0"/>
-    <axis xyz="0 0 1"/>
+    <origin xyz="0.047 0 0" rpy="0 0 0"/>
+    <axis xyz="-1 0 0"/>
     <limit velocity="6.5" effort="1000" lower="${-pi/2}" upper="${pi}" />
     <dynamics damping = "0.7"/>
   </joint>
@@ -463,7 +463,7 @@
 <joint name="r_arm_el_p" type="revolute">
     <parent link="r_arm_shoulder_yaw_link"/>
     <child link="r_arm_elbow_pitch_link"/>
-    <origin xyz="0 0 -0.153" rpy="0 0 0"/>
+    <origin xyz="0.153 0 0" rpy="0 0 0"/>
     <axis xyz="0 1 0"/>
     <limit velocity="6.5" effort="1000" lower="${-pi/2}" upper="${pi}" />
     <dynamics damping = "0.7"/>
@@ -508,7 +508,7 @@
 <joint name="r_arm_wr_p" type="revolute">
     <parent link="r_arm_elbow_pitch_link"/>
     <child link="r_arm_wrist_pitch_link"/>
-    <origin xyz="0 0 -0.2" rpy="0 0 0"/>
+    <origin xyz="0.2 0 0" rpy="0 0 0"/>
     <axis xyz="0 1 0"/>
     <limit velocity="6.5" effort="1000" lower="${-pi/2}" upper="${pi}" />
     <dynamics damping = "0.7"/>
@@ -554,7 +554,7 @@
     <parent link="r_arm_wrist_pitch_link"/>
     <child link="r_arm_wrist_roll_link"/>
     <origin xyz="0 0 0" rpy="0 0 0"/>
-    <axis xyz="1 0 0"/>
+    <axis xyz="0 0 -1"/>
     <limit velocity="6.5" effort="1000" lower="${-pi/2}" upper="${pi}" />
     <dynamics damping = "0.7"/>
   </joint>
