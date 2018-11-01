@@ -23,36 +23,36 @@
 
 <!-- left_arm -->
 <!-- left_arm_shoulder -->
-  <gazebo reference="l_arm_shoulder_pitch">
+  <gazebo reference="l_arm_sh_p">
     <mu1>0.2</mu1>
     <mu2>0.2</mu2>
     <material>Gazebo/White</material>
   </gazebo>
 
- <gazebo reference="l_arm_shoulder_roll">
+ <gazebo reference="l_arm_sh_r">
     <mu1>0.2</mu1>
     <mu2>0.2</mu2>
     <material>Gazebo/White</material>
   </gazebo>
 
- <gazebo reference="l_arm_shoulder_yaw">
+ <gazebo reference="l_arm_sh_y">
     <mu1>0.2</mu1>
     <mu2>0.2</mu2>
     <material>Gazebo/White</material>
   </gazebo>
-  <gazebo reference="l_arm_elbow_pitch">
-    <mu1>0.2</mu1>
-    <mu2>0.2</mu2>
-    <material>Gazebo/White</material>
-  </gazebo>
-
- <gazebo reference="l_arm_wrist_pitch">
+  <gazebo reference="l_arm_el_p">
     <mu1>0.2</mu1>
     <mu2>0.2</mu2>
     <material>Gazebo/White</material>
   </gazebo>
 
- <gazebo reference="l_arm_wrist_roll">
+ <gazebo reference="l_arm_wr_p">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/White</material>
+  </gazebo>
+
+ <gazebo reference="l_arm_wr_r">
     <mu1>0.2</mu1>
     <mu2>0.2</mu2>
     <material>Gazebo/White</material>
@@ -60,36 +60,36 @@
 
 <!-- right_arm -->
 <!-- right_arm_shoulder -->
-  <gazebo reference="r_arm_shoulder_pitch">
+  <gazebo reference="r_arm_sh_p">
     <mu1>0.2</mu1>
     <mu2>0.2</mu2>
     <material>Gazebo/White</material>
   </gazebo>
 
- <gazebo reference="r_arm_shoulder_roll">
+ <gazebo reference="r_arm_sh_r">
     <mu1>0.2</mu1>
     <mu2>0.2</mu2>
     <material>Gazebo/White</material>
   </gazebo>
 
- <gazebo reference="r_arm_shoulder_yaw">
+ <gazebo reference="r_arm_sh_y">
     <mu1>0.2</mu1>
     <mu2>0.2</mu2>
     <material>Gazebo/White</material>
   </gazebo>
-  <gazebo reference="r_arm_elbow_pitch">
-    <mu1>0.2</mu1>
-    <mu2>0.2</mu2>
-    <material>Gazebo/White</material>
-  </gazebo>
-
- <gazebo reference="r_arm_wrist_pitch">
+  <gazebo reference="r_arm_el_p">
     <mu1>0.2</mu1>
     <mu2>0.2</mu2>
     <material>Gazebo/White</material>
   </gazebo>
 
- <gazebo reference="r_arm_wrist_roll">
+ <gazebo reference="r_arm_wr_p">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/White</material>
+  </gazebo>
+
+ <gazebo reference="r_arm_wr_r">
     <mu1>0.2</mu1>
     <mu2>0.2</mu2>
     <material>Gazebo/White</material>

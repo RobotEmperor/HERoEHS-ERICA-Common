@@ -55,7 +55,7 @@
 
   <!-- left_arm -->
   <!-- left_arm_pitch -->
- <joint name="l_arm_shoulder_pitch" type="revolute">
+ <joint name="l_arm_sh_p" type="revolute">
     <parent link="body_main"/>
     <child link="l_arm_shoulder_pitch_link"/>
     <origin xyz="0 0.113 0" rpy="0 0 0"/>
@@ -64,12 +64,12 @@
     <dynamics damping = "0.7"/>
   </joint>
 
-  <transmission name="l_arm_shoulder_pitch_tran">
+  <transmission name="l_arm_sh_p_tran">
      <type>transmission_interface/SimpleTransmission</type>
-     <joint name="l_arm_shoulder_pitch">
+     <joint name="l_arm_sh_p">
        <hardwareInterface>EffortJointInterface</hardwareInterface>
      </joint>
-     <actuator name="l_arm_shoulder_pitch_motor">
+     <actuator name="l_arm_sh_p_motor">
        <hardwareInterface>EffortJointInterface</hardwareInterface>
        <mechanicalReduction>1</mechanicalReduction>
      </actuator>
@@ -100,21 +100,21 @@
 
   <!-- left_arm_roll -->
 
- <joint name="l_arm_shoulder_roll" type="revolute">
+ <joint name="l_arm_sh_r" type="revolute">
     <parent link="l_arm_shoulder_pitch_link"/>
     <child link="l_arm_shoulder_roll_link"/>
     <origin xyz="0 0.097 0" rpy="0 0 0"/>
-    <axis xyz="0 1 0"/>
+    <axis xyz="1 0 0"/>
     <limit velocity="6.5" effort="1000" lower="${-pi/2}" upper="${pi}" />
     <dynamics damping = "0.7"/>
   </joint>
 
-  <transmission name="l_arm_shoulder_roll_tran">
+  <transmission name="l_arm_sh_r_tran">
      <type>transmission_interface/SimpleTransmission</type>
-     <joint name="l_arm_shoulder_roll">
+     <joint name="l_arm_sh_r">
        <hardwareInterface>EffortJointInterface</hardwareInterface>
      </joint>
-     <actuator name="l_arm_shoulder_roll_motor">
+     <actuator name="l_arm_sh_r_motor">
        <hardwareInterface>EffortJointInterface</hardwareInterface>
        <mechanicalReduction>1</mechanicalReduction>
      </actuator>
@@ -145,21 +145,21 @@
 
   <!-- left_arm_yaw -->
 
-<joint name="l_arm_shoulder_yaw" type="revolute">
+<joint name="l_arm_sh_y" type="revolute">
     <parent link="l_arm_shoulder_roll_link"/>
     <child link="l_arm_shoulder_yaw_link"/>
     <origin xyz="0 0 -0.047" rpy="0 0 0"/>
-    <axis xyz="0 1 0"/>
+    <axis xyz="0 0 1"/>
     <limit velocity="6.5" effort="1000" lower="${-pi/2}" upper="${pi}" />
     <dynamics damping = "0.7"/>
   </joint>
 
-  <transmission name="l_arm_shoulder_yaw_tran">
+  <transmission name="l_arm_sh_y_tran">
      <type>transmission_interface/SimpleTransmission</type>
-     <joint name="l_arm_shoulder_yaw">
+     <joint name="l_arm_sh_y">
        <hardwareInterface>EffortJointInterface</hardwareInterface>
      </joint>
-     <actuator name="l_arm_shoulder_yaw_motor">
+     <actuator name="l_arm_sh_y_motor">
        <hardwareInterface>EffortJointInterface</hardwareInterface>
        <mechanicalReduction>1</mechanicalReduction>
      </actuator>
@@ -189,7 +189,7 @@
   </link>
   <!-- left_arm_elbow -->
 
-<joint name="l_arm_elbow_pitch" type="revolute">
+<joint name="l_arm_el_p" type="revolute">
     <parent link="l_arm_shoulder_yaw_link"/>
     <child link="l_arm_elbow_pitch_link"/>
     <origin xyz="0 0 -0.153" rpy="0 0 0"/>
@@ -198,12 +198,12 @@
     <dynamics damping = "0.7"/>
   </joint>
 
-  <transmission name="l_arm_elbow_pitch_tran">
+  <transmission name="l_arm_el_p_tran">
      <type>transmission_interface/SimpleTransmission</type>
-     <joint name="l_arm_elbow_pitch">
+     <joint name="l_arm_el_p">
        <hardwareInterface>EffortJointInterface</hardwareInterface>
      </joint>
-     <actuator name="l_arm_elbow_pitch_motor">
+     <actuator name="l_arm_el_p_motor">
        <hardwareInterface>EffortJointInterface</hardwareInterface>
        <mechanicalReduction>1</mechanicalReduction>
      </actuator>
@@ -234,7 +234,7 @@
 
   <!-- left_arm_wrist_pitch -->
 
-<joint name="l_arm_wrist_pitch" type="revolute">
+<joint name="l_arm_wr_p" type="revolute">
     <parent link="l_arm_elbow_pitch_link"/>
     <child link="l_arm_wrist_pitch_link"/>
     <origin xyz="0 0 -0.2" rpy="0 0 0"/>
@@ -243,12 +243,12 @@
     <dynamics damping = "0.7"/>
   </joint>
 
-  <transmission name="l_arm_wrist_pitch_tran">
+  <transmission name="l_arm_wr_p_tran">
      <type>transmission_interface/SimpleTransmission</type>
-     <joint name="l_arm_wrist_pitch">
+     <joint name="l_arm_wr_p">
        <hardwareInterface>EffortJointInterface</hardwareInterface>
      </joint>
-     <actuator name="l_arm_wrist_pitch_motor">
+     <actuator name="l_arm_wr_p_motor">
        <hardwareInterface>EffortJointInterface</hardwareInterface>
        <mechanicalReduction>1</mechanicalReduction>
      </actuator>
@@ -279,21 +279,21 @@
 
 <!-- left_arm_wrist_roll -->
 
-<joint name="l_arm_wrist_roll" type="revolute">
+<joint name="l_arm_wr_r" type="revolute">
     <parent link="l_arm_wrist_pitch_link"/>
     <child link="l_arm_wrist_roll_link"/>
     <origin xyz="0 0 0" rpy="0 0 0"/>
-    <axis xyz="0 1 0"/>
+    <axis xyz="1 0 0"/>
     <limit velocity="6.5" effort="1000" lower="${-pi/2}" upper="${pi}" />
     <dynamics damping = "0.7"/>
   </joint>
 
-  <transmission name="l_arm_wrist_roll_tran">
+  <transmission name="l_arm_wr_r_tran">
      <type>transmission_interface/SimpleTransmission</type>
-     <joint name="l_arm_wrist_roll">
+     <joint name="l_arm_wr_r">
        <hardwareInterface>EffortJointInterface</hardwareInterface>
      </joint>
-     <actuator name="l_arm_wrist_roll_motor">
+     <actuator name="l_arm_wr_r_motor">
        <hardwareInterface>EffortJointInterface</hardwareInterface>
        <mechanicalReduction>1</mechanicalReduction>
      </actuator>
@@ -326,7 +326,7 @@
 
     <!-- right_arm -->
   <!-- right_arm_pitch -->
- <joint name="r_arm_shoulder_pitch" type="revolute">
+ <joint name="r_arm_sh_p" type="revolute">
     <parent link="body_main"/>
     <child link="r_arm_shoulder_pitch_link"/>
     <origin xyz="0 -0.113 0" rpy="0 0 0"/>
@@ -335,12 +335,12 @@
     <dynamics damping = "0.7"/>
   </joint>
 
-  <transmission name="r_arm_shoulder_pitch_tran">
+  <transmission name="r_arm_sh_p_tran">
      <type>transmission_interface/SimpleTransmission</type>
-     <joint name="r_arm_shoulder_pitch">
+     <joint name="r_arm_sh_p">
        <hardwareInterface>EffortJointInterface</hardwareInterface>
      </joint>
-     <actuator name="r_arm_shoulder_pitch_motor">
+     <actuator name="r_arm_sh_p_motor">
        <hardwareInterface>EffortJointInterface</hardwareInterface>
        <mechanicalReduction>1</mechanicalReduction>
      </actuator>
@@ -371,21 +371,21 @@
 
   <!-- right_arm_roll -->
 
- <joint name="r_arm_shoulder_roll" type="revolute">
+ <joint name="r_arm_sh_r" type="revolute">
     <parent link="r_arm_shoulder_pitch_link"/>
     <child link="r_arm_shoulder_roll_link"/>
     <origin xyz="0 -0.097 0" rpy="0 0 0"/>
-    <axis xyz="0 1 0"/>
+    <axis xyz="1 0 0"/>
     <limit velocity="6.5" effort="1000" lower="${-pi/2}" upper="${pi}" />
     <dynamics damping = "0.7"/>
   </joint>
 
-  <transmission name="r_arm_shoulder_roll_tran">
+  <transmission name="r_arm_sh_r_tran">
      <type>transmission_interface/SimpleTransmission</type>
-     <joint name="r_arm_shoulder_roll">
+     <joint name="r_arm_sh_r">
        <hardwareInterface>EffortJointInterface</hardwareInterface>
      </joint>
-     <actuator name="r_arm_shoulder_roll_motor">
+     <actuator name="r_arm_sh_r_motor">
        <hardwareInterface>EffortJointInterface</hardwareInterface>
        <mechanicalReduction>1</mechanicalReduction>
      </actuator>
@@ -416,21 +416,21 @@
 
   <!-- right_arm_yaw -->
 
-<joint name="r_arm_shoulder_yaw" type="revolute">
+<joint name="r_arm_sh_y" type="revolute">
     <parent link="r_arm_shoulder_roll_link"/>
     <child link="r_arm_shoulder_yaw_link"/>
     <origin xyz="0 0 -0.047" rpy="0 0 0"/>
-    <axis xyz="0 1 0"/>
+    <axis xyz="0 0 1"/>
     <limit velocity="6.5" effort="1000" lower="${-pi/2}" upper="${pi}" />
     <dynamics damping = "0.7"/>
   </joint>
 
-  <transmission name="r_arm_shoulder_yaw_tran">
+  <transmission name="r_arm_sh_y_tran">
      <type>transmission_interface/SimpleTransmission</type>
-     <joint name="r_arm_shoulder_yaw">
+     <joint name="r_arm_sh_y">
        <hardwareInterface>EffortJointInterface</hardwareInterface>
      </joint>
-     <actuator name="r_arm_shoulder_yaw_motor">
+     <actuator name="r_arm_sh_y_motor">
        <hardwareInterface>EffortJointInterface</hardwareInterface>
        <mechanicalReduction>1</mechanicalReduction>
      </actuator>
@@ -460,7 +460,7 @@
   </link>
   <!-- right_arm_elbow -->
 
-<joint name="r_arm_elbow_pitch" type="revolute">
+<joint name="r_arm_el_p" type="revolute">
     <parent link="r_arm_shoulder_yaw_link"/>
     <child link="r_arm_elbow_pitch_link"/>
     <origin xyz="0 0 -0.153" rpy="0 0 0"/>
@@ -469,12 +469,12 @@
     <dynamics damping = "0.7"/>
   </joint>
 
-  <transmission name="r_arm_elbow_pitch_tran">
+  <transmission name="r_arm_el_p_tran">
      <type>transmission_interface/SimpleTransmission</type>
-     <joint name="r_arm_elbow_pitch">
+     <joint name="r_arm_el_p">
        <hardwareInterface>EffortJointInterface</hardwareInterface>
      </joint>
-     <actuator name="r_arm_elbow_pitch_motor">
+     <actuator name="r_arm_el_p_motor">
        <hardwareInterface>EffortJointInterface</hardwareInterface>
        <mechanicalReduction>1</mechanicalReduction>
      </actuator>
@@ -505,7 +505,7 @@
 
   <!-- right_arm_wrist_pitch -->
 
-<joint name="r_arm_wrist_pitch" type="revolute">
+<joint name="r_arm_wr_p" type="revolute">
     <parent link="r_arm_elbow_pitch_link"/>
     <child link="r_arm_wrist_pitch_link"/>
     <origin xyz="0 0 -0.2" rpy="0 0 0"/>
@@ -514,12 +514,12 @@
     <dynamics damping = "0.7"/>
   </joint>
 
-  <transmission name="r_arm_wrist_pitch_tran">
+  <transmission name="r_arm_wr_p_tran">
      <type>transmission_interface/SimpleTransmission</type>
-     <joint name="r_arm_wrist_pitch">
+     <joint name="r_arm_wr_p">
        <hardwareInterface>EffortJointInterface</hardwareInterface>
      </joint>
-     <actuator name="r_arm_wrist_pitch_motor">
+     <actuator name="r_arm_wr_p_motor">
        <hardwareInterface>EffortJointInterface</hardwareInterface>
        <mechanicalReduction>1</mechanicalReduction>
      </actuator>
@@ -550,21 +550,21 @@
 
 <!-- right_arm_wrist_roll -->
 
-<joint name="r_arm_wrist_roll" type="revolute">
+<joint name="r_arm_wr_r" type="revolute">
     <parent link="r_arm_wrist_pitch_link"/>
     <child link="r_arm_wrist_roll_link"/>
     <origin xyz="0 0 0" rpy="0 0 0"/>
-    <axis xyz="0 1 0"/>
+    <axis xyz="1 0 0"/>
     <limit velocity="6.5" effort="1000" lower="${-pi/2}" upper="${pi}" />
     <dynamics damping = "0.7"/>
   </joint>
 
-  <transmission name="r_arm_wrist_roll_tran">
+  <transmission name="r_arm_wr_r_tran">
      <type>transmission_interface/SimpleTransmission</type>
-     <joint name="r_arm_wrist_roll">
+     <joint name="r_arm_wr_r">
        <hardwareInterface>EffortJointInterface</hardwareInterface>
      </joint>
-     <actuator name="r_arm_wrist_roll_motor">
+     <actuator name="r_arm_wr_r_motor">
        <hardwareInterface>EffortJointInterface</hardwareInterface>
        <mechanicalReduction>1</mechanicalReduction>
      </actuator>

@@ -6,65 +6,65 @@ erica_robot:
   
   # Position Controllers ---------------------------------------
   # left arm ---------------------------------------
-  l_arm_shoulder_pitch_position:
+  l_arm_sh_p_position:
     type: effort_controllers/JointPositionController
-    joint: l_arm_shoulder_pitch
+    joint: l_arm_sh_p
     pid: {p: 7500.0, i: 0.1, d: 100.0}
 
-  l_arm_shoulder_roll_position:
+  l_arm_sh_r_position:
     type: effort_controllers/JointPositionController
-    joint: l_arm_shoulder_roll
+    joint: l_arm_sh_r
     pid: {p: 7500.0, i: 0.1, d: 100.0}
 
-  l_arm_shoulder_yaw_position:
+  l_arm_sh_y_position:
     type: effort_controllers/JointPositionController
-    joint: l_arm_shoulder_yaw
+    joint: l_arm_sh_y
     pid: {p: 7500.0, i: 0.1, d: 100.0}
 
-  l_arm_elbow_pitch_position:
+  l_arm_el_p_position:
     type: effort_controllers/JointPositionController
-    joint: l_arm_elbow_pitch
+    joint: l_arm_el_p
     pid: {p: 7500.0, i: 0.1, d: 100.0}
 
-  l_arm_wrist_pitch_position:
+  l_arm_wr_p_position:
     type: effort_controllers/JointPositionController
-    joint: l_arm_wrist_pitch
+    joint: l_arm_wr_p
     pid: {p: 7500.0, i: 0.1, d: 100.0}
 
-  l_arm_wrist_roll_position:
+  l_arm_wr_r_position:
     type: effort_controllers/JointPositionController
-    joint: l_arm_wrist_roll
+    joint: l_arm_wr_r
     pid: {p: 7500.0, i: 0.1, d: 100.0}
 
   # right arm ---------------------------------------
-  r_arm_shoulder_pitch_position:
+  r_arm_sh_p_position:
     type: effort_controllers/JointPositionController
-    joint: r_arm_shoulder_pitch
+    joint: r_arm_sh_p
     pid: {p: 7500.0, i: 0.1, d: 100.0}
 
-  r_arm_shoulder_roll_position:
+  r_arm_sh_r_position:
     type: effort_controllers/JointPositionController
-    joint: r_arm_shoulder_roll
+    joint: r_arm_sh_r
     pid: {p: 7500.0, i: 0.1, d: 100.0}
 
-  r_arm_shoulder_yaw_position:
+  r_arm_sh_y_position:
     type: effort_controllers/JointPositionController
-    joint: r_arm_shoulder_yaw
+    joint: r_arm_sh_y
     pid: {p: 7500.0, i: 0.1, d: 100.0}
 
-  r_arm_elbow_pitch_position:
+  r_arm_el_p_position:
     type: effort_controllers/JointPositionController
-    joint: r_arm_elbow_pitch
+    joint: r_arm_el_p
     pid: {p: 7500.0, i: 0.1, d: 100.0}
 
-  r_arm_wrist_pitch_position:
+  r_arm_wr_p_position:
     type: effort_controllers/JointPositionController
-    joint: r_arm_wrist_pitch
+    joint: r_arm_wr_p
     pid: {p: 7500.0, i: 0.1, d: 100.0}
 
-  r_arm_wrist_roll_position:
+  r_arm_wr_r_position:
     type: effort_controllers/JointPositionController
-    joint: r_arm_wrist_roll
+    joint: r_arm_wr_r
     pid: {p: 7500.0, i: 0.1, d: 100.0}
 
 
