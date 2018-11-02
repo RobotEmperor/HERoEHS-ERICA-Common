@@ -43,7 +43,7 @@
         <geometry>
           <mesh filename="package://erica_description/meshes/asm_don_big_main.stl" scale="0.001 0.001 0.001"/>
         </geometry>
-        <material name="red"/>
+        <material name="white"/>
     </visual>
 
     <inertial>
@@ -88,7 +88,7 @@
         <geometry>
           <mesh filename="package://erica_description/meshes/asm_don_big_arm_l-1.stl" scale="0.001 0.001 0.001"/>
         </geometry>
-        <material name="red"/>
+        <material name="white"/>
     </visual>
 
     <inertial>
@@ -133,7 +133,7 @@
         <geometry>
           <mesh filename="package://erica_description/meshes/asm_don_big_arm_l-2.stl" scale="0.001 0.001 0.001"/>
         </geometry>
-        <material name="red"/>
+        <material name="white"/>
     </visual>
 
     <inertial>
@@ -178,7 +178,7 @@
         <geometry>
           <mesh filename="package://erica_description/meshes/asm_don_big_arm_l-3.stl" scale="0.001 0.001 0.001"/>
         </geometry>
-        <material name="red"/>
+        <material name="white"/>
     </visual>
 
     <inertial>
@@ -222,7 +222,7 @@
         <geometry>
           <mesh filename="package://erica_description/meshes/asm_don_big_arm_l-4.stl" scale="0.001 0.001 0.001"/>
         </geometry>
-        <material name="red"/>
+        <material name="white"/>
     </visual>
 
     <inertial>
@@ -267,7 +267,7 @@
         <geometry>
           <mesh filename="package://erica_description/meshes/asm_don_big_arm_l-5.stl" scale="0.001 0.001 0.001"/>
         </geometry>
-        <material name="red"/>
+        <material name="white"/>
     </visual>
 
     <inertial>
@@ -312,7 +312,7 @@
         <geometry>
           <mesh filename="package://erica_description/meshes/asm_don_big_arm_l-6.stl" scale="0.001 0.001 0.001"/>
         </geometry>
-        <material name="red"/>
+        <material name="white"/>
     </visual>
 
     <inertial>
@@ -359,7 +359,7 @@
         <geometry>
           <mesh filename="package://erica_description/meshes/asm_don_big_arm_r-1.stl" scale="0.001 0.001 0.001"/>
         </geometry>
-        <material name="red"/>
+        <material name="white"/>
     </visual>
 
     <inertial>
@@ -404,7 +404,7 @@
         <geometry>
           <mesh filename="package://erica_description/meshes/asm_don_big_arm_r-2.stl" scale="0.001 0.001 0.001"/>
         </geometry>
-        <material name="red"/>
+        <material name="white"/>
     </visual>
 
     <inertial>
@@ -449,7 +449,7 @@
         <geometry>
           <mesh filename="package://erica_description/meshes/asm_don_big_arm_r-3.stl" scale="0.001 0.001 0.001"/>
         </geometry>
-        <material name="red"/>
+        <material name="white"/>
     </visual>
 
     <inertial>
@@ -493,7 +493,7 @@
         <geometry>
           <mesh filename="package://erica_description/meshes/asm_don_big_arm_r-4.stl" scale="0.001 0.001 0.001"/>
         </geometry>
-        <material name="red"/>
+        <material name="white"/>
     </visual>
 
     <inertial>
@@ -538,7 +538,7 @@
         <geometry>
           <mesh filename="package://erica_description/meshes/asm_don_big_arm_r-5.stl" scale="0.001 0.001 0.001"/>
         </geometry>
-        <material name="red"/>
+        <material name="white"/>
     </visual>
 
     <inertial>
@@ -583,7 +583,7 @@
         <geometry>
           <mesh filename="package://erica_description/meshes/asm_don_big_arm_r-6.stl" scale="0.001 0.001 0.001"/>
         </geometry>
-        <material name="red"/>
+        <material name="white"/>
     </visual>
 
     <inertial>
