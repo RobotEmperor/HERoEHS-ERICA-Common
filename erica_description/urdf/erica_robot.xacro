@@ -57,7 +57,7 @@
    <joint name="camera_joint" type="fixed">
     <parent link="body_main"/>
     <child link="zed_camera_center"/>
-    <origin xyz="0 0 0.195" rpy="0 0 0"/>
+    <origin xyz="0.09 0 0.195" rpy="0 0 0"/>
   </joint>
   
   <!-- Camera Center -->
@@ -66,45 +66,44 @@
 
   <!-- Left Camera -->
 
-    <joint name="zed_left_camera_joint" type="fixed">
-        <parent link="zed_camera_center"/>
-        <child link="zed_left_camera_frame"/>
-        <origin xyz="0 0.06 0" rpy="0 0 0" />
-    </joint>
+  <joint name="zed_left_camera_joint" type="fixed">
+   <parent link="zed_camera_center"/>
+   <child link="zed_left_camera_frame"/>
+   <origin xyz="0 0.06 0" rpy="0 0 0" />
+  </joint>
 
     <link name="zed_left_camera_frame" />
 
-    <joint name="zed_left_camera_optical_joint" type="fixed">
-        <origin xyz="0 0 0" rpy="-1.57079632679 0.0 -1.57079632679"/>
-        <parent link="zed_left_camera_frame"/>
-        <child link="zed_left_camera_optical_frame"/>
-    </joint>
+  <joint name="zed_left_camera_optical_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="-1.57079632679 0.0 -1.57079632679"/>
+    <parent link="zed_left_camera_frame"/>
+    <child link="zed_left_camera_optical_frame"/>
+  </joint>
 
-    <link name="zed_left_camera_optical_frame"/>
+  <link name="zed_left_camera_optical_frame"/>
 
   <!-- Right Camera -->
+  <joint name="zed_right_camera_joint" type="fixed">
+    <parent link="zed_camera_center"/>
+    <child link="zed_right_camera_frame"/>
+    <origin xyz="0 -0.06 0" rpy="0 0 0" />
+  </joint>
 
-    <joint name="zed_right_camera_joint" type="fixed">
-        <parent link="zed_camera_center"/>
-        <child link="zed_right_camera_frame"/>
-        <origin xyz="0 -0.06 0" rpy="0 0 0" />
-    </joint>
+  <link name="zed_right_camera_frame" />
 
-    <link name="zed_right_camera_frame" />
+  <joint name="zed_right_camera_optical_joint" type="fixed">
+   <origin xyz="0 0 0" rpy="-1.57079632679 0.0 -1.57079632679"/>
+   <parent link="zed_right_camera_frame"/>
+   <child link="zed_right_camera_optical_frame"/>
+  </joint>
 
-    <joint name="zed_right_camera_optical_joint" type="fixed">
-        <origin xyz="0 0 0" rpy="-1.57079632679 0.0 -1.57079632679"/>
-        <parent link="zed_right_camera_frame"/>
-        <child link="zed_right_camera_optical_frame"/>
-    </joint>
-
-    <link name="zed_right_camera_optical_frame"/>
+  <link name="zed_right_camera_optical_frame"/>
 
 
 
   <!-- left_arm -->
   <!-- left_arm_pitch -->
- <joint name="l_arm_sh_p" type="revolute">
+  <joint name="l_arm_sh_p" type="revolute">
     <parent link="body_main"/>
     <child link="l_arm_shoulder_pitch_link"/>
     <origin xyz="0 0.113 0" rpy="0 0 0"/>
