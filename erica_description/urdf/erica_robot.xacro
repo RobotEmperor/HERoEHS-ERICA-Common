@@ -2,7 +2,7 @@
 
 <robot name="erica_robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-  <xacro:property name="pi" value="3.141592654" />
+  <xacro:property name="pi" value="3.14" />
    <!-- Import all Gazebo-customization elements, including Gazebo colors -->
   <xacro:include filename="$(find erica_description)/urdf/erica_gazebo.gazebo" />
   <xacro:include filename="$(find erica_description)/urdf/materials.xacro" />
@@ -48,7 +48,7 @@
 
     <inertial>
       <origin xyz="0 0 0" rpy="0 0 0"/>      
-      <mass value="100"/>
+      <mass value="300"/>
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />      
     </inertial>
   </link>
@@ -108,7 +108,7 @@
     <child link="l_arm_shoulder_pitch_link"/>
     <origin xyz="0 0.113 0" rpy="0 0 0"/>
     <axis xyz="0 1 0"/>
-    <limit velocity="6.5" effort="1000" lower="${-pi/2}" upper="${pi}" />
+    <limit velocity="6.5" effort="1000" lower="${-pi}" upper="${pi}" />
     <dynamics damping = "0.7"/>
   </joint>
 
@@ -153,7 +153,7 @@
     <child link="l_arm_shoulder_roll_link"/>
     <origin xyz="0 0.097 0" rpy="0 0 0"/>
     <axis xyz="0 0 -1"/>
-    <limit velocity="6.5" effort="1000" lower="${-pi/2}" upper="${pi}" />
+    <limit velocity="6.5" effort="1000" lower="${-pi}" upper="${pi}" />
     <dynamics damping = "0.7"/>
   </joint>
 
@@ -198,7 +198,7 @@
     <child link="l_arm_shoulder_yaw_link"/>
     <origin xyz="0.047 0 0" rpy="0 0 0"/>
     <axis xyz="-1 0 0"/>
-    <limit velocity="6.5" effort="1000" lower="${-pi/2}" upper="${pi}" />
+    <limit velocity="6.5" effort="1000" lower="${-pi}" upper="${pi}" />
     <dynamics damping = "0.7"/>
   </joint>
 
@@ -242,7 +242,7 @@
     <child link="l_arm_elbow_pitch_link"/>
     <origin xyz="0.153 0 0" rpy="0 0 0"/>
     <axis xyz="0 -1 0"/>
-    <limit velocity="6.5" effort="1000" lower="${-pi/2}" upper="${pi}" />
+    <limit velocity="6.5" effort="1000" lower="${-pi}" upper="${pi}" />
     <dynamics damping = "0.7"/>
   </joint>
 
@@ -287,7 +287,7 @@
     <child link="l_arm_wrist_pitch_link"/>
     <origin xyz="0.2 0 0" rpy="0 0 0"/>
     <axis xyz="0 -1 0"/>
-    <limit velocity="6.5" effort="1000" lower="${-pi/2}" upper="${pi}" />
+    <limit velocity="6.5" effort="1000" lower="${-pi}" upper="${pi}" />
     <dynamics damping = "0.7"/>
   </joint>
 
@@ -332,7 +332,7 @@
     <child link="l_arm_wrist_roll_link"/>
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <axis xyz="0 0 -1"/>
-    <limit velocity="6.5" effort="1000" lower="${-pi/2}" upper="${pi}" />
+    <limit velocity="6.5" effort="1000" lower="${-pi}" upper="${pi}" />
     <dynamics damping = "0.7"/>
   </joint>
 
@@ -379,7 +379,7 @@
     <child link="r_arm_shoulder_pitch_link"/>
     <origin xyz="0 -0.113 0" rpy="0 0 0"/>
     <axis xyz="0 -1 0"/>
-    <limit velocity="6.5" effort="1000" lower="${-pi/2}" upper="${pi}" />
+    <limit velocity="6.5" effort="1000" lower="${-pi}" upper="${pi}" />
     <dynamics damping = "0.7"/>
   </joint>
 
@@ -424,7 +424,7 @@
     <child link="r_arm_shoulder_roll_link"/>
     <origin xyz="0 -0.097 0" rpy="0 0 0"/>
     <axis xyz="0 0 -1"/>
-    <limit velocity="6.5" effort="1000" lower="${-pi/2}" upper="${pi}" />
+    <limit velocity="6.5" effort="1000" lower="${-pi}" upper="${pi}" />
     <dynamics damping = "0.7"/>
   </joint>
 
@@ -469,7 +469,7 @@
     <child link="r_arm_shoulder_yaw_link"/>
     <origin xyz="0.047 0 0" rpy="0 0 0"/>
     <axis xyz="-1 0 0"/>
-    <limit velocity="6.5" effort="1000" lower="${-pi/2}" upper="${pi}" />
+    <limit velocity="6.5" effort="1000" lower="${-pi}" upper="${pi}" />
     <dynamics damping = "0.7"/>
   </joint>
 
@@ -513,7 +513,7 @@
     <child link="r_arm_elbow_pitch_link"/>
     <origin xyz="0.153 0 0" rpy="0 0 0"/>
     <axis xyz="0 1 0"/>
-    <limit velocity="6.5" effort="1000" lower="${-pi/2}" upper="${pi}" />
+    <limit velocity="6.5" effort="1000" lower="${-pi}" upper="${pi}" />
     <dynamics damping = "0.7"/>
   </joint>
 
@@ -558,7 +558,7 @@
     <child link="r_arm_wrist_pitch_link"/>
     <origin xyz="0.2 0 0" rpy="0 0 0"/>
     <axis xyz="0 1 0"/>
-    <limit velocity="6.5" effort="1000" lower="${-pi/2}" upper="${pi}" />
+    <limit velocity="6.5" effort="1000" lower="${-pi}" upper="${pi}" />
     <dynamics damping = "0.7"/>
   </joint>
 
@@ -603,7 +603,7 @@
     <child link="r_arm_wrist_roll_link"/>
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <axis xyz="0 0 -1"/>
-    <limit velocity="6.5" effort="1000" lower="${-pi/2}" upper="${pi}" />
+    <limit velocity="6.5" effort="1000" lower="${-pi}" upper="${pi}" />
     <dynamics damping = "0.7"/>
   </joint>
 
