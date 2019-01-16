@@ -17,31 +17,31 @@
     <parent link="world"/>
     <child link="pelvis"/>
   </joint>
--->
+
 
   <link name="base">
   </link>
 
   <joint name="base_fixed" type="fixed">
-    <origin xyz="0 0 1" rpy="0 0 0"/>
+    <origin xyz="0 0 0.2" rpy="0 0 0"/>
     <parent link="base"/>
     <child link="body_main"/>
   </joint>
-
+-->
   <!-- main -->
 
  <link name="body_main">
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
          <geometry>
-          <mesh filename="package://erica_description/meshes/prt_gazevo_test.stl" scale="1 1 1"/>
+          <mesh filename="package://erica_description/meshes/asm_don_big_main.stl" scale="0.001 0.001 0.001"/>
         </geometry>
     </collision>
 
     <visual>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://erica_description/meshes/prt_gazevo_test.stl" scale="1 1 1"/>
+          <mesh filename="package://erica_description/meshes/asm_don_big_main.stl" scale="0.001 0.001 0.001"/>
         </geometry>
         <material name="white"/>
     </visual>
@@ -53,15 +53,384 @@
     </inertial>
   </link>
 
+  <!-- left wheel front-->
+
+  <joint name="left_wheel_front_joint" type="revolute">
+    <origin xyz="0.09 0.157 0.037" rpy="0 0 0"/>
+    <parent link="body_main"/>
+    <child link="left_wheel_front"/>
+    <axis xyz="0 1 0"/>
+    <limit velocity="6.5" effort="1000" lower="${-pi}" upper="${pi}" />
+    <dynamics damping = "0.7"/>
+  </joint>
+
+<transmission name="left_wheel_front_joint_tran">
+     <type>transmission_interface/SimpleTransmission</type>
+     <joint name="left_wheel_front_joint">
+       <hardwareInterface>EffortJointInterface</hardwareInterface>
+     </joint>
+     <actuator name="left_wheel_front_joint_motor">
+       <hardwareInterface>EffortJointInterface</hardwareInterface>
+       <mechanicalReduction>1</mechanicalReduction>
+     </actuator>
+  </transmission>
+
+ <link name="left_wheel_front">
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+         <geometry>
+          <mesh filename="package://erica_description/meshes/left_wheel_front.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+    </collision>
+
+    <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://erica_description/meshes/left_wheel_front.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+        <material name="white"/>
+    </visual>
+
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>      
+      <mass value="1"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />      
+    </inertial>
+  </link>
+
+ <!-- right wheel front -->
+
+  <joint name="right_wheel_front_joint" type="revolute">
+    <origin xyz="0.09 -0.157 0.037" rpy="0 0 0"/>
+    <parent link="body_main"/>
+    <child link="right_wheel_front"/>
+    <axis xyz="0 1 0"/>
+    <limit velocity="6.5" effort="1000" lower="${-pi}" upper="${pi}" />
+    <dynamics damping = "0.7"/>
+  </joint>
+
+<transmission name="right_wheel_front_joint_tran">
+     <type>transmission_interface/SimpleTransmission</type>
+     <joint name="right_wheel_front_joint">
+       <hardwareInterface>EffortJointInterface</hardwareInterface>
+     </joint>
+     <actuator name="right_wheel_front_joint_motor">
+       <hardwareInterface>EffortJointInterface</hardwareInterface>
+       <mechanicalReduction>1</mechanicalReduction>
+     </actuator>
+  </transmission>
+
+ <link name="right_wheel_front">
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+         <geometry>
+          <mesh filename="package://erica_description/meshes/right_wheel_front.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+    </collision>
+
+    <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://erica_description/meshes/right_wheel_front.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+        <material name="white"/>
+    </visual>
+
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>      
+      <mass value="1"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />      
+    </inertial>
+  </link>
+
+  <!-- left wheel rear-->
+
+  <joint name="left_wheel_rear_joint" type="revolute">
+    <origin xyz="-0.09 0.157 0.037" rpy="0 0 0"/>
+    <parent link="body_main"/>
+    <child link="left_wheel_rear"/>
+    <axis xyz="0 1 0"/>
+    <limit velocity="6.5" effort="1000" lower="${-pi}" upper="${pi}" />
+    <dynamics damping = "0.7"/>
+  </joint>
+
+<transmission name="left_wheel_rear_joint_tran">
+     <type>transmission_interface/SimpleTransmission</type>
+     <joint name="left_wheel_rear_joint">
+       <hardwareInterface>EffortJointInterface</hardwareInterface>
+     </joint>
+     <actuator name="left_wheel_rear_joint_motor">
+       <hardwareInterface>EffortJointInterface</hardwareInterface>
+       <mechanicalReduction>1</mechanicalReduction>
+     </actuator>
+  </transmission>
+
+ <link name="left_wheel_rear">
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+         <geometry>
+          <mesh filename="package://erica_description/meshes/left_wheel_rear.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+    </collision>
+
+    <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://erica_description/meshes/left_wheel_rear.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+        <material name="white"/>
+    </visual>
+
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>      
+      <mass value="1"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />      
+    </inertial>
+  </link>
+
+ <!-- right wheel rear -->
+
+  <joint name="right_wheel_rear_joint" type="revolute">
+    <origin xyz="-0.09 -0.157 0.037" rpy="0 0 0"/>
+    <parent link="body_main"/>
+    <child link="right_wheel_rear"/>
+    <axis xyz="0 1 0"/>
+    <limit velocity="6.5" effort="1000" lower="${-pi}" upper="${pi}" />
+    <dynamics damping = "0.7"/>
+  </joint>
+
+<transmission name="right_wheel_rear_joint_tran">
+     <type>transmission_interface/SimpleTransmission</type>
+     <joint name="right_wheel_rear_joint">
+       <hardwareInterface>EffortJointInterface</hardwareInterface>
+     </joint>
+     <actuator name="right_wheel_rear_joint_motor">
+       <hardwareInterface>EffortJointInterface</hardwareInterface>
+       <mechanicalReduction>1</mechanicalReduction>
+     </actuator>
+  </transmission>
+
+ <link name="right_wheel_rear">
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+         <geometry>
+          <mesh filename="package://erica_description/meshes/right_wheel_rear.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+    </collision>
+
+    <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://erica_description/meshes/right_wheel_rear.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+        <material name="white"/>
+    </visual>
+
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>      
+      <mass value="1"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />      
+    </inertial>
+  </link>
+
+<!-- neck-->
+
+  <joint name="neck_fixed_joint" type="fixed">
+    <origin xyz="0 0 0.933" rpy="0 0 0"/>
+    <parent link="body_main"/>
+    <child link="neck_joint"/>
+  </joint>
+
+ <link name="neck_joint">
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+         <geometry>
+          <mesh filename="package://erica_description/meshes/asm_don_big_neck.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+    </collision>
+
+    <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://erica_description/meshes/asm_don_big_neck.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+        <material name="white"/>
+    </visual>
+
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>      
+      <mass value="1"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />      
+    </inertial>
+  </link>
+
+<!-- head_yaw -->
+
+  <joint name="head_yaw_joint" type="revolute">
+    <origin xyz="0 0 0.164" rpy="0 0 0"/>
+    <parent link="neck_joint"/>
+    <child link="head_yaw"/>
+    <axis xyz="0 0 1"/>
+    <limit velocity="6.5" effort="1000" lower="${-pi}" upper="${pi}" />
+    <dynamics damping = "0.7"/>
+  </joint>
+
+<transmission name="head_yaw_joint_tran">
+     <type>transmission_interface/SimpleTransmission</type>
+     <joint name="head_yaw_joint">
+       <hardwareInterface>EffortJointInterface</hardwareInterface>
+     </joint>
+     <actuator name="head_yaw_joint_motor">
+       <hardwareInterface>EffortJointInterface</hardwareInterface>
+       <mechanicalReduction>1</mechanicalReduction>
+     </actuator>
+  </transmission>
+
+ <link name="head_yaw">
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+         <geometry>
+          <mesh filename="package://erica_description/meshes/asm_don_big_main_head_yaw.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+    </collision>
+
+    <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://erica_description/meshes/asm_don_big_main_head_yaw.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+        <material name="white"/>
+    </visual>
+
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>      
+      <mass value="1"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />      
+    </inertial>
+  </link>
+
+<!-- head_pitch -->
+
+  <joint name="head_pitch_joint" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="head_yaw"/>
+    <child link="head_pitch"/>
+    <axis xyz="0 1 0"/>
+    <limit velocity="6.5" effort="1000" lower="${-pi}" upper="${pi}" />
+    <dynamics damping = "0.7"/>
+  </joint>
+
+<transmission name="head_pitch_joint_tran">
+     <type>transmission_interface/SimpleTransmission</type>
+     <joint name="head_pitch_joint">
+       <hardwareInterface>EffortJointInterface</hardwareInterface>
+     </joint>
+     <actuator name="head_pitch_joint_motor">
+       <hardwareInterface>EffortJointInterface</hardwareInterface>
+       <mechanicalReduction>1</mechanicalReduction>
+     </actuator>
+  </transmission>
+
+ <link name="head_pitch">
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+         <geometry>
+          <mesh filename="package://erica_description/meshes/asm_don_big_main_head_pitch.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+    </collision>
+
+    <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://erica_description/meshes/asm_don_big_main_head_pitch.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+        <material name="white"/>
+    </visual>
+
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>      
+      <mass value="1"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />      
+    </inertial>
+  </link>
+
+<!-- head_roll -->
+
+  <joint name="head_roll_joint" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="head_pitch"/>
+    <child link="head_roll"/>
+    <axis xyz="1 0 0"/>
+    <limit velocity="6.5" effort="1000" lower="${-pi}" upper="${pi}" />
+    <dynamics damping = "0.7"/>
+  </joint>
+
+<transmission name="head_roll_joint_tran">
+     <type>transmission_interface/SimpleTransmission</type>
+     <joint name="head_roll_joint">
+       <hardwareInterface>EffortJointInterface</hardwareInterface>
+     </joint>
+     <actuator name="head_roll_joint_motor">
+       <hardwareInterface>EffortJointInterface</hardwareInterface>
+       <mechanicalReduction>1</mechanicalReduction>
+     </actuator>
+  </transmission>
+
+ <link name="head_roll">
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+         <geometry>
+          <mesh filename="package://erica_description/meshes/asm_don_big_main_head_roll.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+    </collision>
+
+    <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://erica_description/meshes/asm_don_big_main_head_roll.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+        <material name="white"/>
+    </visual>
+
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>      
+      <mass value="1"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />      
+    </inertial>
+  </link>
+
+
+
   <!-- head(zed) -->
    <joint name="camera_joint" type="fixed">
-    <parent link="body_main"/>
+    <parent link="head_roll"/>
     <child link="zed_camera_center"/>
-    <origin xyz="0.09 0 0.195" rpy="0 0 0"/>
+    <origin xyz="0.0778 0 0" rpy="0 0 0"/>
   </joint>
   
   <!-- Camera Center -->
-  <link name="zed_camera_center"/>
+  <link name="zed_camera_center">
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+          <mesh filename="package://erica_description/meshes/asm_don_big_main_zed.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+    </collision>
+
+    <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://erica_description/meshes/asm_don_big_main_zed.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+        <material name="white"/>
+    </visual>
+
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>      
+      <mass value="1"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />      
+    </inertial>
+  </link>
 
 
   <!-- Left Camera -->
@@ -73,6 +442,7 @@
   </joint>
 
     <link name="zed_left_camera_frame" />
+
 
   <joint name="zed_left_camera_optical_joint" type="fixed">
     <origin xyz="0 0 0" rpy="-1.57079632679 0.0 -1.57079632679"/>
@@ -91,6 +461,7 @@
 
   <link name="zed_right_camera_frame" />
 
+
   <joint name="zed_right_camera_optical_joint" type="fixed">
    <origin xyz="0 0 0" rpy="-1.57079632679 0.0 -1.57079632679"/>
    <parent link="zed_right_camera_frame"/>
@@ -101,12 +472,13 @@
 
 
 
+
   <!-- left_arm -->
   <!-- left_arm_pitch -->
   <joint name="l_arm_sh_p" type="revolute">
     <parent link="body_main"/>
     <child link="l_arm_shoulder_pitch_link"/>
-    <origin xyz="0 0.113 0" rpy="0 0 0"/>
+    <origin xyz="0 0.113 0.897" rpy="0 0 0"/>
     <axis xyz="0 1 0"/>
     <limit velocity="6.5" effort="1000" lower="${-pi}" upper="${pi}" />
     <dynamics damping = "0.7"/>
@@ -377,7 +749,7 @@
  <joint name="r_arm_sh_p" type="revolute">
     <parent link="body_main"/>
     <child link="r_arm_shoulder_pitch_link"/>
-    <origin xyz="0 -0.113 0" rpy="0 0 0"/>
+    <origin xyz="0 -0.113 0.897" rpy="0 0 0"/>
     <axis xyz="0 -1 0"/>
     <limit velocity="6.5" effort="1000" lower="${-pi}" upper="${pi}" />
     <dynamics damping = "0.7"/>
