@@ -236,10 +236,10 @@
   <joint name="neck_fixed_joint" type="fixed">
     <origin xyz="0 0 0.933" rpy="0 0 0"/>
     <parent link="body_main"/>
-    <child link="neck_joint"/>
+    <child link="neck_link"/>
   </joint>
 
- <link name="neck_joint">
+ <link name="neck_link">
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
          <geometry>
@@ -264,27 +264,27 @@
 
 <!-- head_yaw -->
 
-  <joint name="head_yaw_joint" type="revolute">
+  <joint name="head_yaw" type="revolute">
     <origin xyz="0 0 0.164" rpy="0 0 0"/>
-    <parent link="neck_joint"/>
-    <child link="head_yaw"/>
+    <parent link="neck_link"/>
+    <child link="head_yaw_link"/>
     <axis xyz="0 0 1"/>
     <limit velocity="6.5" effort="1000" lower="${-pi}" upper="${pi}" />
     <dynamics damping = "0.7"/>
   </joint>
 
-<transmission name="head_yaw_joint_tran">
+<transmission name="head_yaw_tran">
      <type>transmission_interface/SimpleTransmission</type>
-     <joint name="head_yaw_joint">
+     <joint name="head_yaw">
        <hardwareInterface>EffortJointInterface</hardwareInterface>
      </joint>
-     <actuator name="head_yaw_joint_motor">
+     <actuator name="head_yaw_motor">
        <hardwareInterface>EffortJointInterface</hardwareInterface>
        <mechanicalReduction>1</mechanicalReduction>
      </actuator>
   </transmission>
 
- <link name="head_yaw">
+ <link name="head_yaw_link">
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
          <geometry>
@@ -309,27 +309,27 @@
 
 <!-- head_pitch -->
 
-  <joint name="head_pitch_joint" type="revolute">
+  <joint name="head_pitch" type="revolute">
     <origin xyz="0 0 0" rpy="0 0 0"/>
-    <parent link="head_yaw"/>
-    <child link="head_pitch"/>
-    <axis xyz="0 1 0"/>
+    <parent link="head_yaw_link"/>
+    <child link="head_pitch_link"/>
+    <axis xyz="0 -1 0"/>
     <limit velocity="6.5" effort="1000" lower="${-pi}" upper="${pi}" />
     <dynamics damping = "0.7"/>
   </joint>
 
-<transmission name="head_pitch_joint_tran">
+<transmission name="head_pitch_tran">
      <type>transmission_interface/SimpleTransmission</type>
-     <joint name="head_pitch_joint">
+     <joint name="head_pitch">
        <hardwareInterface>EffortJointInterface</hardwareInterface>
      </joint>
-     <actuator name="head_pitch_joint_motor">
+     <actuator name="head_pitch_motor">
        <hardwareInterface>EffortJointInterface</hardwareInterface>
        <mechanicalReduction>1</mechanicalReduction>
      </actuator>
   </transmission>
 
- <link name="head_pitch">
+ <link name="head_pitch_link">
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
          <geometry>
@@ -354,27 +354,27 @@
 
 <!-- head_roll -->
 
-  <joint name="head_roll_joint" type="revolute">
+  <joint name="head_roll" type="revolute">
     <origin xyz="0 0 0" rpy="0 0 0"/>
-    <parent link="head_pitch"/>
-    <child link="head_roll"/>
+    <parent link="head_pitch_link"/>
+    <child link="head_roll_link"/>
     <axis xyz="1 0 0"/>
     <limit velocity="6.5" effort="1000" lower="${-pi}" upper="${pi}" />
     <dynamics damping = "0.7"/>
   </joint>
 
-<transmission name="head_roll_joint_tran">
+<transmission name="head_roll_tran">
      <type>transmission_interface/SimpleTransmission</type>
-     <joint name="head_roll_joint">
+     <joint name="head_roll">
        <hardwareInterface>EffortJointInterface</hardwareInterface>
      </joint>
-     <actuator name="head_roll_joint_motor">
+     <actuator name="head_roll_motor">
        <hardwareInterface>EffortJointInterface</hardwareInterface>
        <mechanicalReduction>1</mechanicalReduction>
      </actuator>
   </transmission>
 
- <link name="head_roll">
+ <link name="head_roll_link">
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
          <geometry>
@@ -401,7 +401,7 @@
 
   <!-- head(zed) -->
    <joint name="camera_joint" type="fixed">
-    <parent link="head_roll"/>
+    <parent link="head_roll_link"/>
     <child link="zed_camera_center"/>
     <origin xyz="0.0778 0 0" rpy="0 0 0"/>
   </joint>

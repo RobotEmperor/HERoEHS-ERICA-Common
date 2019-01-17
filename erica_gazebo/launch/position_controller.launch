@@ -7,9 +7,9 @@
   <!-- load the controllers -->
   <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
 	output="screen" ns="/erica_robot" args="joint_state_controller
-                                                          head_yaw_joint_position
-                                                          head_roll_joint_position
-                                                          head_pitch_joint_position
+                                                          head_yaw_position
+                                                          head_roll_position
+                                                          head_pitch_position
 				       		          l_arm_sh_p_position
 				       		    	  r_arm_sh_p_position
 				       		 	      l_arm_sh_r_position
