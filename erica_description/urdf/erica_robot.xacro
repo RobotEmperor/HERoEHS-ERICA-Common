@@ -2,8 +2,8 @@
 
 <robot name="erica_robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-  <xacro:property name="pi" value="3.14" />
-   <!-- Import all Gazebo-customization elements, including Gazebo colors -->
+  <xacro:property name="pi" value="3.14159" />
+  <!-- Import all Gazebo-customization elements, including Gazebo colors -->
   <xacro:include filename="$(find erica_description)/urdf/erica_gazebo.gazebo" />
   <xacro:include filename="$(find erica_description)/urdf/materials.xacro" />
 
@@ -30,20 +30,20 @@
 -->
   <!-- main -->
 
- <link name="body_main">
+  <link name="body_main">
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
-         <geometry>
+        <geometry>
           <mesh filename="package://erica_description/meshes/asm_don_big_main.stl" scale="0.001 0.001 0.001"/>
         </geometry>
     </collision>
 
     <visual>
-        <origin xyz="0 0 0" rpy="0 0 0"/>
-        <geometry>
-          <mesh filename="package://erica_description/meshes/asm_don_big_main.stl" scale="0.001 0.001 0.001"/>
-        </geometry>
-        <material name="white"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://erica_description/meshes/asm_don_big_main.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="white"/>
     </visual>
 
     <inertial>
@@ -54,7 +54,6 @@
   </link>
 
   <!-- left wheel front-->
-
   <joint name="left_wheel_front_joint" type="revolute">
     <origin xyz="0.09 0.157 0.037" rpy="0 0 0"/>
     <parent link="body_main"/>
@@ -64,7 +63,7 @@
     <dynamics damping = "0.7"/>
   </joint>
 
-<transmission name="left_wheel_front_joint_tran">
+  <transmission name="left_wheel_front_joint_tran">
      <type>transmission_interface/SimpleTransmission</type>
      <joint name="left_wheel_front_joint">
        <hardwareInterface>EffortJointInterface</hardwareInterface>
@@ -99,7 +98,6 @@
   </link>
 
  <!-- right wheel front -->
-
   <joint name="right_wheel_front_joint" type="revolute">
     <origin xyz="0.09 -0.157 0.037" rpy="0 0 0"/>
     <parent link="body_main"/>
@@ -109,7 +107,7 @@
     <dynamics damping = "0.7"/>
   </joint>
 
-<transmission name="right_wheel_front_joint_tran">
+  <transmission name="right_wheel_front_joint_tran">
      <type>transmission_interface/SimpleTransmission</type>
      <joint name="right_wheel_front_joint">
        <hardwareInterface>EffortJointInterface</hardwareInterface>
@@ -441,7 +439,7 @@
    <origin xyz="0 0.06 0" rpy="0 0 0" />
   </joint>
 
-    <link name="zed_left_camera_frame" />
+  <link name="zed_left_camera_frame" />
 
 
   <joint name="zed_left_camera_optical_joint" type="fixed">
