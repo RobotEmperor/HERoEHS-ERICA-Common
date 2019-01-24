@@ -9,7 +9,7 @@
     </plugin>
   </gazebo>
 
- <gazebo reference="zed_camera_center">
+  <gazebo reference="zed_camera_center">
     <sensor type="camera" name="camera1">
       <update_rate>30.0</update_rate>
       <camera name="head">
@@ -25,7 +25,7 @@
         </clip>
         <noise>
           <type>gaussian</type>
-          <!-- Noise is sampled independently per pixel on each frame.
+           <!-- Noise is sampled independently per pixel on each frame.
                That pixel's noise value is added to each of its color
                channels, which at that point lie in the range [0,1]. -->
           <mean>0.0</mean>
@@ -48,8 +48,7 @@
       </plugin>
     </sensor>
   </gazebo>
-
- 
+  
   <!-- World -->
   <gazebo reference="world">
   </gazebo>
@@ -64,8 +63,8 @@
     <material>Gazebo/White</material>
   </gazebo>
 
-<!-- left_arm -->
-<!-- left_arm_shoulder -->
+  <!-- left_arm -->
+  <!-- left_arm_shoulder -->
   <gazebo reference="l_arm_sh_p">
     <mu1>0.2</mu1>
     <mu2>0.2</mu2>
@@ -101,8 +100,8 @@
     <material>Gazebo/White</material>
   </gazebo>
 
-<!-- right_arm -->
-<!-- right_arm_shoulder -->
+  <!-- right_arm -->
+  <!-- right_arm_shoulder -->
   <gazebo reference="r_arm_sh_p">
     <mu1>0.2</mu1>
     <mu2>0.2</mu2>

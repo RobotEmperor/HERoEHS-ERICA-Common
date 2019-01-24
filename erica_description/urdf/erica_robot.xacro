@@ -142,7 +142,6 @@
   </link>
 
   <!-- left wheel rear-->
-
   <joint name="left_wheel_rear_joint" type="revolute">
     <origin xyz="-0.09 0.157 0.037" rpy="0 0 0"/>
     <parent link="body_main"/>
@@ -152,7 +151,7 @@
     <dynamics damping = "0.7"/>
   </joint>
 
-<transmission name="left_wheel_rear_joint_tran">
+  <transmission name="left_wheel_rear_joint_tran">
      <type>transmission_interface/SimpleTransmission</type>
      <joint name="left_wheel_rear_joint">
        <hardwareInterface>EffortJointInterface</hardwareInterface>
@@ -163,7 +162,7 @@
      </actuator>
   </transmission>
 
- <link name="left_wheel_rear">
+  <link name="left_wheel_rear">
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
          <geometry>
@@ -186,8 +185,7 @@
     </inertial>
   </link>
 
- <!-- right wheel rear -->
-
+  <!-- right wheel rear -->
   <joint name="right_wheel_rear_joint" type="revolute">
     <origin xyz="-0.09 -0.157 0.037" rpy="0 0 0"/>
     <parent link="body_main"/>
@@ -197,7 +195,7 @@
     <dynamics damping = "0.7"/>
   </joint>
 
-<transmission name="right_wheel_rear_joint_tran">
+  <transmission name="right_wheel_rear_joint_tran">
      <type>transmission_interface/SimpleTransmission</type>
      <joint name="right_wheel_rear_joint">
        <hardwareInterface>EffortJointInterface</hardwareInterface>
@@ -208,7 +206,7 @@
      </actuator>
   </transmission>
 
- <link name="right_wheel_rear">
+  <link name="right_wheel_rear">
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
          <geometry>
@@ -231,15 +229,14 @@
     </inertial>
   </link>
 
-<!-- neck-->
-
+  <!-- neck-->
   <joint name="neck_fixed_joint" type="fixed">
     <origin xyz="0 0 0.933" rpy="0 0 0"/>
     <parent link="body_main"/>
     <child link="neck_link"/>
   </joint>
 
- <link name="neck_link">
+  <link name="neck_link">
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
          <geometry>
@@ -307,8 +304,7 @@
     </inertial>
   </link>
 
-<!-- head_pitch -->
-
+  <!-- head_pitch -->
   <joint name="head_pitch" type="revolute">
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <parent link="head_yaw_link"/>
@@ -318,7 +314,7 @@
     <dynamics damping = "0.7"/>
   </joint>
 
-<transmission name="head_pitch_tran">
+  <transmission name="head_pitch_tran">
      <type>transmission_interface/SimpleTransmission</type>
      <joint name="head_pitch">
        <hardwareInterface>EffortJointInterface</hardwareInterface>
@@ -329,7 +325,7 @@
      </actuator>
   </transmission>
 
- <link name="head_pitch_link">
+  <link name="head_pitch_link">
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
          <geometry>
@@ -352,8 +348,7 @@
     </inertial>
   </link>
 
-<!-- head_roll -->
-
+  <!-- head_roll -->
   <joint name="head_roll" type="revolute">
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <parent link="head_pitch_link"/>
@@ -363,7 +358,7 @@
     <dynamics damping = "0.7"/>
   </joint>
 
-<transmission name="head_roll_tran">
+  <transmission name="head_roll_tran">
      <type>transmission_interface/SimpleTransmission</type>
      <joint name="head_roll">
        <hardwareInterface>EffortJointInterface</hardwareInterface>
@@ -374,7 +369,7 @@
      </actuator>
   </transmission>
 
- <link name="head_roll_link">
+  <link name="head_roll_link">
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
          <geometry>
@@ -400,7 +395,7 @@
 
 
   <!-- head(zed) -->
-   <joint name="camera_joint" type="fixed">
+  <joint name="camera_joint" type="fixed">
     <parent link="head_roll_link"/>
     <child link="zed_camera_center"/>
     <origin xyz="0.0778 0 0" rpy="0 0 0"/>
@@ -432,7 +427,6 @@
 
 
   <!-- Left Camera -->
-
   <joint name="zed_left_camera_joint" type="fixed">
    <parent link="zed_camera_center"/>
    <child link="zed_left_camera_frame"/>
@@ -517,8 +511,7 @@
   </link>
 
   <!-- left_arm_roll -->
-
- <joint name="l_arm_sh_r" type="revolute">
+  <joint name="l_arm_sh_r" type="revolute">
     <parent link="l_arm_shoulder_pitch_link"/>
     <child link="l_arm_shoulder_roll_link"/>
     <origin xyz="0 0.097 0" rpy="0 0 0"/>
@@ -562,8 +555,7 @@
   </link>
 
   <!-- left_arm_yaw -->
-
-<joint name="l_arm_sh_y" type="revolute">
+  <joint name="l_arm_sh_y" type="revolute">
     <parent link="l_arm_shoulder_roll_link"/>
     <child link="l_arm_shoulder_yaw_link"/>
     <origin xyz="0.047 0 0" rpy="0 0 0"/>
@@ -605,9 +597,9 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />      
     </inertial>
   </link>
+  
   <!-- left_arm_elbow -->
-
-<joint name="l_arm_el_p" type="revolute">
+  <joint name="l_arm_el_p" type="revolute">
     <parent link="l_arm_shoulder_yaw_link"/>
     <child link="l_arm_elbow_pitch_link"/>
     <origin xyz="0.153 0 0" rpy="0 0 0"/>
@@ -651,8 +643,7 @@
   </link>
 
   <!-- left_arm_wrist_pitch -->
-
-<joint name="l_arm_wr_p" type="revolute">
+  <joint name="l_arm_wr_p" type="revolute">
     <parent link="l_arm_elbow_pitch_link"/>
     <child link="l_arm_wrist_pitch_link"/>
     <origin xyz="0.2 0 0" rpy="0 0 0"/>
@@ -695,9 +686,8 @@
     </inertial>
   </link>
 
-<!-- left_arm_wrist_roll -->
-
-<joint name="l_arm_wr_r" type="revolute">
+  <!-- left_arm_wrist_roll -->
+  <joint name="l_arm_wr_r" type="revolute">
     <parent link="l_arm_wrist_pitch_link"/>
     <child link="l_arm_wrist_roll_link"/>
     <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -742,9 +732,9 @@
 
 
 
-    <!-- right_arm -->
+  <!-- right_arm -->
   <!-- right_arm_pitch -->
- <joint name="r_arm_sh_p" type="revolute">
+  <joint name="r_arm_sh_p" type="revolute">
     <parent link="body_main"/>
     <child link="r_arm_shoulder_pitch_link"/>
     <origin xyz="0 -0.113 0.897" rpy="0 0 0"/>
@@ -788,8 +778,7 @@
   </link>
 
   <!-- right_arm_roll -->
-
- <joint name="r_arm_sh_r" type="revolute">
+  <joint name="r_arm_sh_r" type="revolute">
     <parent link="r_arm_shoulder_pitch_link"/>
     <child link="r_arm_shoulder_roll_link"/>
     <origin xyz="0 -0.097 0" rpy="0 0 0"/>
@@ -833,8 +822,7 @@
   </link>
 
   <!-- right_arm_yaw -->
-
-<joint name="r_arm_sh_y" type="revolute">
+  <joint name="r_arm_sh_y" type="revolute">
     <parent link="r_arm_shoulder_roll_link"/>
     <child link="r_arm_shoulder_yaw_link"/>
     <origin xyz="0.047 0 0" rpy="0 0 0"/>
@@ -878,7 +866,7 @@
   </link>
   <!-- right_arm_elbow -->
 
-<joint name="r_arm_el_p" type="revolute">
+  <joint name="r_arm_el_p" type="revolute">
     <parent link="r_arm_shoulder_yaw_link"/>
     <child link="r_arm_elbow_pitch_link"/>
     <origin xyz="0.153 0 0" rpy="0 0 0"/>
@@ -922,8 +910,7 @@
   </link>
 
   <!-- right_arm_wrist_pitch -->
-
-<joint name="r_arm_wr_p" type="revolute">
+  <joint name="r_arm_wr_p" type="revolute">
     <parent link="r_arm_elbow_pitch_link"/>
     <child link="r_arm_wrist_pitch_link"/>
     <origin xyz="0.2 0 0" rpy="0 0 0"/>
@@ -968,7 +955,7 @@
 
 <!-- right_arm_wrist_roll -->
 
-<joint name="r_arm_wr_r" type="revolute">
+  <joint name="r_arm_wr_r" type="revolute">
     <parent link="r_arm_wrist_pitch_link"/>
     <child link="r_arm_wrist_roll_link"/>
     <origin xyz="0 0 0" rpy="0 0 0"/>
