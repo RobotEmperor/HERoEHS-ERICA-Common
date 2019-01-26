@@ -3,6 +3,29 @@ erica_robot:
   joint_state_controller:
     type: joint_state_controller/JointStateController
     publish_rate: 125  
+      
+      # head yaw ---------------------------------------
+  left_wheel_front_steering_position:
+    type: effort_controllers/JointPositionController
+    joint: left_wheel_front_steering_joint
+    pid: {p: 7500.0, i: 0.1, d: 100.0}
+
+  # head pitch ---------------------------------------
+  right_wheel_front_steering_position:
+    type: effort_controllers/JointPositionController
+    joint: right_wheel_front_steering_joint
+    pid: {p: 7500.0, i: 0.1, d: 100.0}
+
+  # head roll ---------------------------------------
+  left_wheel_rear_steering_position:
+    type: effort_controllers/JointPositionController
+    joint: left_wheel_rear_steering_joint
+    pid: {p: 7500.0, i: 0.1, d: 100.0}
+    
+  right_wheel_rear_steering_position:
+    type: effort_controllers/JointPositionController
+    joint: right_wheel_rear_steering_joint
+    pid: {p: 7500.0, i: 0.1, d: 100.0}
   
   # Position Controllers ---------------------------------------
   # head yaw ---------------------------------------

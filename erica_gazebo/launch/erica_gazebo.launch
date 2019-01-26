@@ -29,5 +29,6 @@
 
   <!-- ros_control robotis manipulator launch file -->
   <include file="$(find erica_gazebo)/launch/position_controller.launch" />
+ 
 
 </launch>
