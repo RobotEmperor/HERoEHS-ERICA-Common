@@ -8,24 +8,24 @@ erica_robot:
   left_wheel_front_steering_position:
     type: effort_controllers/JointPositionController
     joint: left_wheel_front_steering_joint
-    pid: {p: 7500.0, i: 0.1, d: 100.0}
+    pid: {p: 750.0, i: 0.1, d: 1000}
 
   # head pitch ---------------------------------------
   right_wheel_front_steering_position:
     type: effort_controllers/JointPositionController
     joint: right_wheel_front_steering_joint
-    pid: {p: 7500.0, i: 0.1, d: 100.0}
+    pid: {p: 750.0, i: 0.1, d: 1000}
 
   # head roll ---------------------------------------
   left_wheel_rear_steering_position:
     type: effort_controllers/JointPositionController
     joint: left_wheel_rear_steering_joint
-    pid: {p: 7500.0, i: 0.1, d: 100.0}
+    pid: {p: 750.0, i: 0.1, d: 1000}
     
   right_wheel_rear_steering_position:
     type: effort_controllers/JointPositionController
     joint: right_wheel_rear_steering_joint
-    pid: {p: 7500.0, i: 0.1, d: 100.0}
+    pid: {p: 750.0, i: 0.1, d: 1000}
   
   # Position Controllers ---------------------------------------
   # head yaw ---------------------------------------
