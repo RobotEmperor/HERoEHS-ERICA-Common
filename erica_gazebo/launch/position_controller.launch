@@ -26,6 +26,9 @@
  							                        left_wheel_front_steering_position
  							                        right_wheel_rear_steering_position
  							                        left_wheel_rear_steering_position
+ 							                        fake_x_velocity
+ 							                        fake_y_velocity
+ 							                        fake_z_position
  							              
 							  "/>
 

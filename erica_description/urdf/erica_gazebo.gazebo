@@ -53,7 +53,7 @@
   <gazebo reference="hokuyo_link">
     <sensor type="ray" name="hokuyo_sensor">
       <pose>0 0 0 0 0 0</pose>
-      <visualize>true</visualize>
+      <visualize>false</visualize>
       <update_rate>100</update_rate>
       <ray>
         <scan>
