@@ -53,8 +53,8 @@
   <gazebo reference="hokuyo_link">
     <sensor type="ray" name="hokuyo_sensor">
       <pose>0 0 0 0 0 0</pose>
-      <visualize>false</visualize>
-      <update_rate>100</update_rate>
+      <visualize>true</visualize>
+      <update_rate>250</update_rate>
       <ray>
         <scan>
           <horizontal>
@@ -86,23 +86,14 @@
     </sensor>
   </gazebo>
   
+  
+
   <gazebo>
-    <plugin name="skid_steer_drive_controller" filename="libgazebo_ros_skid_steer_drive.so">
-      <updateRate>50.0</updateRate>
-      <robotNamespace>/</robotNamespace>
-      <leftFrontJoint>left_wheel_front_joint</leftFrontJoint>
-      <rightFrontJoint>right_wheel_front_joint</rightFrontJoint>
-      <leftRearJoint>left_wheel_front_joint</leftRearJoint>
-      <rightRearJoint>right_wheel_front_joint</rightRearJoint>
-      <wheelSeparation>0.4</wheelSeparation>
-      <wheelDiameter>0.215</wheelDiameter>
-      <robotBaseFrame>body_main</robotBaseFrame>
-      <torque>20</torque>
-      <topicName>cmd_vel</topicName>
-      <broadcastTF>false</broadcastTF>
-    </plugin>
+    <plugin name="mecanum" filename="libmecanum.so"/>
   </gazebo>
   
+
+   
   <!-- World -->
 
 

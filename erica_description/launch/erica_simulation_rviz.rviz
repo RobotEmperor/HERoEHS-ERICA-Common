@@ -4,7 +4,6 @@ Panels:
     Name: Displays
     Property Tree Widget:
       Expanded:
-        - /Global Options1
         - /Status1
         - /RobotModel1
         - /RobotModel1/Links1
@@ -66,7 +65,27 @@ Visualization Manager:
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
+        bl_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
         body_main:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        br_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        fl_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        fr_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -121,26 +140,6 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
-        left_wheel_front:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        left_wheel_front_steering:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        left_wheel_rear:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        left_wheel_rear_steering:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
         neck_link:
           Alpha: 1
           Show Axes: false
@@ -172,26 +171,6 @@ Visualization Manager:
           Show Trail: false
           Value: true
         r_arm_wrist_roll_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        right_wheel_front:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        right_wheel_front_steering:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        right_wheel_rear:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        right_wheel_rear_steering:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -343,7 +322,7 @@ Visualization Manager:
   Global Options:
     Background Color: 48; 48; 48
     Default Light: true
-    Fixed Frame: map
+    Fixed Frame: bl_link
     Frame Rate: 30
   Name: root
   Tools:
@@ -364,7 +343,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 3.72366118
+      Distance: 14.5072947
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.0599999987
         Stereo Focal Distance: 1
@@ -379,10 +358,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.00999999978
-      Pitch: 0.689796507
+      Pitch: 0.930203021
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 3.18908501
+      Yaw: 4.02408314
     Saved: ~
 Window Geometry:
   Camera:
@@ -404,5 +383,5 @@ Window Geometry:
   Views:
     collapsed: true
   Width: 1855
-  X: 312
-  Y: 140
+  X: 269
+  Y: 24

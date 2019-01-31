@@ -22,13 +22,6 @@
 							                        r_arm_wr_p_position
 							                        l_arm_wr_r_position
  							                        r_arm_wr_r_position
- 							                        right_wheel_front_steering_position
- 							                        left_wheel_front_steering_position
- 							                        right_wheel_rear_steering_position
- 							                        left_wheel_rear_steering_position
- 							                        fake_x_velocity
- 							                        fake_y_velocity
- 							                        fake_z_position
  							              
 							  "/>
 
