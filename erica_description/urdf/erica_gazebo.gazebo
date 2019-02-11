@@ -60,14 +60,14 @@
           <horizontal>
             <samples>720</samples>
             <resolution>1</resolution>
-            <min_angle>-2.09439510</min_angle>
-            <max_angle>2.09439510</max_angle>
+            <min_angle>0</min_angle>
+            <max_angle>6.2657320146</max_angle>
           </horizontal>
         </scan>
         <range>
           <min>0.10</min>
           <max>4.5</max>
-          <resolution>0.1</resolution>
+          <resolution>1</resolution>
         </range>
         <noise>
           <type>gaussian</type>
